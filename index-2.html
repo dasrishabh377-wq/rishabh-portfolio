@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Rishabh Video Editor — educational and valuable content editing portfolio.">
+<title>Rishabh | Video Editor</title>
+<style>
+:root{--bg:#090909;--panel:#141414;--yellow:#e5ff00;--text:#f5f5f5;--muted:#aaa;--line:#292929}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(9,9,9,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.brand img{width:52px;height:52px;object-fit:cover;border-radius:50%;border:2px solid var(--yellow);background:#172b4d}
+.brand-name{font-weight:800;line-height:1.15;letter-spacing:.2px}
+.brand-name span{display:block;color:var(--yellow);font-size:13px;font-weight:600;margin-top:4px}
+nav{display:flex;gap:20px;align-items:center}
+nav a{font-size:13px;color:#ddd}
+nav a:hover{color:var(--yellow)}
+.menu{display:none;background:none;color:var(--yellow);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:20px}
+.hero{padding:78px 0 62px;min-height:360px;display:flex;align-items:center}
+.eyebrow{color:var(--yellow);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(38px,7vw,68px);line-height:1.05;letter-spacing:-2px;margin:14px 0}
+h1 span{color:var(--yellow)}
+.hero p{max-width:650px;color:var(--muted);font-size:17px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.btn{display:inline-block;padding:12px 18px;border-radius:8px;font-weight:800;font-size:14px;border:1px solid var(--yellow)}
+.btn.primary{background:var(--yellow);color:#111}
+.btn.secondary{color:var(--yellow)}
+section{padding:58px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:24px}
+.section-head h2{font-size:clamp(27px,4vw,40px);line-height:1.1;margin:7px 0 0}
+.section-head p{color:var(--muted);max-width:450px;margin:0;font-size:14px}
+.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.work-card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel)}
+.video-box{aspect-ratio:16/9;background:linear-gradient(135deg,#202020,#101010);display:flex;align-items:center;justify-content:center;position:relative}
+.video-box .play{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--yellow);color:var(--yellow);font-size:22px}
+.video-box .tag{position:absolute;left:12px;top:12px;background:var(--yellow);color:#111;font-weight:800;font-size:10px;letter-spacing:1px;padding:5px 8px;border-radius:4px}
+.work-info{padding:16px}
+.work-info h3{margin:0 0 5px;font-size:18px}
+.work-info p{margin:0;color:var(--muted);font-size:13px}
+.note{margin-top:18px;color:var(--muted);font-size:13px}
+.category-grid,.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.category,.service{padding:21px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.category .num{color:var(--yellow);font-size:12px;font-weight:800;letter-spacing:1px}
+.category h3,.service h3{margin:8px 0 5px;font-size:19px}
+.category p,.service p{margin:0;color:var(--muted);font-size:14px}
+.icon{color:var(--yellow);font-size:23px}
+.about-row{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;align-items:start}
+.about-row p{color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.skills span{border:1px solid #414414;color:#eaff73;border-radius:99px;padding:7px 11px;font-size:12px}
+.contact-box{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:25px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+.contact-box h3{font-size:24px;margin:0 0 7px}
+.contact-box p{color:var(--muted);margin:0}
+footer{padding:24px 0;color:#777;font-size:12px;text-align:center;border-top:1px solid var(--line)}
+@media(max-width:650px){
+ nav{display:none;position:absolute;top:77px;left:0;right:0;background:#101010;padding:18px 4%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+ nav.open{display:flex}.menu{display:block}.brand img{width:45px;height:45px}
+ .hero{padding:58px 0 45px}.hero p{font-size:15px}
+ .section-head{display:block}.section-head p{margin-top:12px}
+ .work-grid,.category-grid,.service-grid,.about-row{grid-template-columns:1fr}
+ .contact-box{display:block}.contact-box .btn{margin-top:18px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Rishabh Video Editor home">
+      <img src="logo.jpg" alt="Rishabh's logo">
+      <div class="brand-name">Rishabh<span>Video Editor</span></div>
+    </a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#work">My Work</a><a href="#categories">Categories</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="eyebrow">Educational • Informative • Valuable Content</div>
+    <h1>I make valuable content<br><span>more engaging.</span></h1>
+    <p>I’m Rishabh, a video editor focused on educational and informative videos. I use clean cuts, captions, motion graphics and purposeful visuals to make ideas easier to follow.</p>
+    <div class="actions"><a class="btn primary" href="#work">View My Work ↓</a><a class="btn secondary" href="#contact">Work With Me ↗</a></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow">Selected edits</div><h2>My Work / Portfolio</h2></div><p>Your video samples will appear here. You can add real videos later without changing the overall design.</p></div>
+    <div class="work-grid">
+      <article class="work-card"><div class="video-box"><span class="tag">EDUCATIONAL</span><span class="play">▶</span></div><div class="work-info"><h3>Educational Video</h3><p>Add your video link here when ready.</p></div></article>
+      <article class="work-card"><div class="video-box"><span class="tag">PODCAST</span><span class="play">▶</span></div><div class="work-info"><h3>Podcast Clip</h3><p>Add your video link here when ready.</p></div></article>
+      <article class="work-card"><div class="video-box"><span class="tag">MOTIVATIONAL</span><span class="play">▶</span></div><div class="work-info"><h3>Motivational Edit</h3><p>Add your video link here when ready.</p></div></article>
+      <article class="work-card"><div class="video-box"><span class="tag">TALKING HEAD</span><span class="play">▶</span></div><div class="work-info"><h3>Talking-Head Video</h3><p>Add your video link here when ready.</p></div></article>
+    </div>
+    <p class="note">These are placeholders, not real videos. We’ll connect your actual video samples here whenever you’re ready.</p>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow">Content styles</div><h2>Content I Edit</h2></div><p>Different formats, with the same goal: make useful content clear and engaging.</p></div>
+    <div class="category-grid">
+      <div class="category"><div class="num">01 / LEARN</div><h3>Educational & Informative</h3><p>Clear structure, captions and visuals that help explain ideas.</p></div>
+      <div class="category"><div class="num">02 / CONVERSATION</div><h3>Podcast Clips</h3><p>Focused cuts, readable subtitles and emphasis on key moments.</p></div>
+      <div class="category"><div class="num">03 / INSPIRATION</div><h3>Motivational Content</h3><p>Pacing, music cues and visuals that support the message.</p></div>
+      <div class="category"><div class="num">04 / CREATOR</div><h3>Talking-Head Videos</h3><p>Clean cuts, captions, punch-ins and supporting B-roll.</p></div>
+      <div class="category"><div class="num">05 / TECHNOLOGY</div><h3>Tech & Knowledge</h3><p>Product visuals, motion elements and simple explanations.</p></div>
+      <div class="category"><div class="num">06 / SHORT FORM</div><h3>Reels & Shorts</h3><p>Vertical edits designed for quick, clear viewing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head"><div><div class="eyebrow">How I can help</div><h2>Services</h2></div><p>Editing services for creators and brands sharing educational or valuable content.</p></div>
+    <div class="service-grid">
+      <div class="service"><div class="icon">✂</div><h3>Video Editing</h3><p>Clean cuts, pacing and a polished flow.</p></div>
+      <div class="service"><div class="icon">▤</div><h3>Captions & Subtitles</h3><p>Readable captions that support the message.</p></div>
+      <div class="service"><div class="icon">✦</div><h3>Motion Graphics</h3><p>Simple animated text and visual emphasis.</p></div>
+      <div class="service"><div class="icon">◉</div><h3>B-roll & Visuals</h3><p>Supporting visuals to make ideas easier to understand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-row">
+    <div><div class="eyebrow">A little about me</div><h2>Hi, I’m Rishabh.</h2><p>I’m building my video-editing portfolio around educational and valuable content. My focus is to make videos clean, clear and engaging using thoughtful cuts, captions and visuals.</p><p>I edit with CapCut and keep improving through practice and portfolio projects.</p></div>
+    <div><div class="eyebrow">Editing focus</div><div class="skills"><span>Clean Cuts</span><span>Captions</span><span>Motion Graphics</span><span>B-roll</span><span>Educational Content</span><span>Short-Form Video</span><span>CapCut</span></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box"><div><div class="eyebrow">Let’s work together</div><h3>Have a video to edit?</h3><p>Message me about your educational or informative content project.</p></div><a class="btn primary" href="https://www.instagram.com/" target="_blank" rel="noopener">Contact Me ↗</a></div>
+    <p class="note">Before publishing, replace the Instagram link above with your actual profile link.</p>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Rishabh Video Editor · Educational & Valuable Content</div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));</script>
+</body>
+</html>
